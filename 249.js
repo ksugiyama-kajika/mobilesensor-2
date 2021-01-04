@@ -77,6 +77,7 @@ function deviceorientationHandler(event) {
 
     return compassHeading * (180 / Math.PI);
     console.log(compassHeading);
+    document.querySelector('#compassHeading').textContent = `方角：${compassHeading}`
   }
 }
 
