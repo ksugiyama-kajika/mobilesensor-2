@@ -29,9 +29,11 @@ if (window.DeviceOrientationEvent) {
 // DeviceOrientationEvent
 // window.addEventListener('deviceorientation', deviceorientationHandler);
 
+function getCompassHeading(alpha, beta, gamma) {
+
 // ジャイロセンサーの値が変化するとその値を取得する
 // 各軸にのデータをeventから取得し、定数へ代入
-function deviceorientationHandler(event) {
+function deviceorientationHandler(event, getCompassHeading) {
   // x軸
   const beta = event.beta;
   // Y軸
@@ -50,13 +52,17 @@ function deviceorientationHandler(event) {
 
   // 引数に取得した３軸ジャイロ値alpha, beta, gammaをとる
   // getCompassHeading関数を定義
-  function getCompassHeading(alpha, beta, gamma) {
+
     // 角度をラジアン変換
     const degtorad = Math.PI / 180;
 
     const _x = beta ? beta * degtorad : 0;
     const _y = gamma ? gamma * degtorad : 0;
     const _z = alpha ? alpha * degtorad : 0;
+
+    console.log(_x);
+    console.log(_y);
+    console.log(_z);
 
     const cY = Math.cos(_y);
     const cZ = Math.cos(_y);
