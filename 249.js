@@ -54,7 +54,7 @@ function getCompassHeading(alpha, beta, gamma) {
 }
 
 // DeviceOrientationEvent
-window.addEventListener("deviceorientation", deviceorientationHandler);
+// window.addEventListener("deviceorientation", deviceorientationHandler);
 
 // ジャイロセンサーの値が変化
 function deviceorientationHandler(event) {
