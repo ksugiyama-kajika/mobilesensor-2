@@ -64,6 +64,11 @@ function deviceorientationHandler(event) {
   const gamma = event.gamma;
   // z軸
   const alpha = event.alpha;
+  // iPhone用
+  const iOSCompass
+  if(event.webkitCompassHeading) {
+    iOSCompass = event.webkitCompassHeading;
+  }
 
   // HTMLに出力
   document.querySelector('#beta').textContent = `x軸：${beta}`;
@@ -71,5 +76,6 @@ function deviceorientationHandler(event) {
   document.querySelector('#alpha').textContent = `z軸：${alpha}`;
   const compassHeading = getCompassHeading(alpha, beta, gamma);
   console.log(compassHeading);
-  document.querySelector('#compassHeading').textContent = `方角: ${compassHeading}`
+  document.querySelector('#compassHeading').textContent = `方角: ${compassHeading}`;
+  document.querySelector('#iOSCompass').textContent = `方角：${iOSCompass}`;
 }
