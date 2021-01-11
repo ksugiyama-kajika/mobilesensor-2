@@ -65,9 +65,8 @@ function deviceorientationHandler(event) {
   // z軸
   const alpha = event.alpha;
   // iPhone用
-  const iOSCompass
   if(event.webkitCompassHeading) {
-    iOSCompass = event.webkitCompassHeading;
+    const iOSCompass = event.webkitCompassHeading;
   }
 
   // HTMLに出力
